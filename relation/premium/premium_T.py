@@ -35,7 +35,7 @@ def premium_T():
         volatility=Decimal(0.714)
     )
 
-    maturity = [0.5, 1, 2, 3, 10]
+    maturity = [1, 7, 14, 21, 28, 35]
 
     # premium = intrinsic_value + time_value
     x = list(range(22000, 28000))
