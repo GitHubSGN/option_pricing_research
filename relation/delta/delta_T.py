@@ -17,7 +17,7 @@ from tools.draw_util import line_plot
 from tools.option_price import quote_option
 
 
-def premium_T():
+def delta_T():
     '''
     Delta v.s. Maturity
     try to change underlying price to test in/at/out-of-the-money
@@ -43,8 +43,8 @@ def premium_T():
     maturity = np.arange(0, 300) / 100
     deltas = []
     legends = []
-    for op_type in ['CALL']:
-        for multiplier in [0.9, 1, 1.1]:
+    for op_type in ['PUT']:
+        for multiplier in [0.8, 1, 1.2]:
             op.type = op_type
             op.underlying_price = op.strike_price * Decimal(multiplier)
             delta = []
@@ -66,4 +66,4 @@ def premium_T():
 
 
 if __name__ == '__main__':
-    premium_T()
+    delta_T()
